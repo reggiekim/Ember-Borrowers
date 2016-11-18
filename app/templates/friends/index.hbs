@@ -2,8 +2,8 @@
 
 <h2>Total friends: {{model.length}}</h2>
 
-<ul>
-  {{#each model as |friend|}}
+{{!-- <ul>
+  {{#each model as |friend|}} --}}
     {{!-- <li>{{friend.firstName}} {{friend.lastName}}</li> --}}
     {{!-- <li>{{friend.id}} - {{friend.firstName}} {{friend.lastName}}</li> --}}
     {{!-- <li>
@@ -11,6 +11,23 @@
         {{friend.firstName}} {{friend.lastName}}
       {{/link-to}}
     </li> --}}
-    <li>{{link-to friend.fullName "friends.show" friend}}</li>
+{{!--     <li>{{link-to friend.fullName "friends.show" friend}}</li>
   {{/each}}
-</ul>
+</ul> --}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |friend|}}
+      <tr>
+        <td>{{link-to friend.fullName "friends.show" friend}}</td>
+        <td><a href="#" {{action "delete" friend}}>Delete</a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
