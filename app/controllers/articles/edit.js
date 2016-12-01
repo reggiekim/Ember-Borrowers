@@ -5,8 +5,8 @@ export default Ember.Controller.extend({
     console.log('save action called in articles new');
     this.transitionToRoute('articles.show', model);
   },
-  cancel() {
+  cancel(model) {
     console.log('cancel action called in articles new');
-    this.transitionToRoute('articles.index');
+    this.transitionToRoute('articles.show', model);
   }
 });
