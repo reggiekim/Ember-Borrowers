@@ -7,7 +7,7 @@ import attr from 'ember-data/attr';
 import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
-  notes: attr('string'),
+  notes: attr('string', {defaultValue: ""}),
   returned: attr('boolean'),
   createdAt: attr('date'),
   friend: belongsTo('friend'),
