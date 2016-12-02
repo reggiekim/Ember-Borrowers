@@ -26,6 +26,8 @@ module.exports = function(defaults) {
 
   app.import('vendor/basscss.min.css');
 
+  app.import('bower_components/moment/moment.js');
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
