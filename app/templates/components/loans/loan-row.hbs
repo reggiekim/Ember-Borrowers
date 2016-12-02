@@ -1,0 +1,18 @@
+<td>{{loan.article.name}}</td>
+<td>{{loan.notes}}</td>
+<td>{{loan.createdAt}}</td>
+<td>
+  {{input type="checkbox" checked=loan.returned click=(action save loan)}}
+  {{!-- {{input type="checkbox" checked=loan.returned}} --}}
+  {{!-- Rewritten so that the Save action is called as soon as the checkbox --}}
+  {{!-- is clicked, rather than clicking on a separate save button --}}
+</td>
+<td>
+  {{#if loan.isSaving}}
+    <p>Saving ...</p>
+  {{!-- {{else if loan.hasDirtyAttributes}}
+    <button {{action save loan}}>Save</button> --}}
+    {{!-- Save button removed because we are now calling the Save action --}}
+    {{!-- as soon as the checkbox is clicked --}}
+  {{/if}}
+</td>
